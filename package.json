@@ -1,0 +1,36 @@
+{
+  "name": "vue-see-more",
+  "private": false,
+  "version": "1.0.0",
+  "description": "Plugin to assist in displaying long texts",
+  "main": "./dist/index.js",
+  "scripts": {
+    "dev": "vue serve SeeMoreComponent.vue",
+    "build": "bili --name index --plugin vue --vue.css false"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fsenaweb/vue-see-more.git"
+  },
+  "keywords": [
+    "see",
+    "more",
+    "veja",
+    "mais",
+    "ler",
+    "read",
+    "vue",
+    "vue.js",
+    "display"
+  ],
+  "author": "Matheus Ricelly <fsenaweb@gmail.com>",
+  "homepage": "https://fsenaweb.me",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup-plugin-vue": "^5.1.2",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
