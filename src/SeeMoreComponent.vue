@@ -33,7 +33,7 @@ export default {
             default: ''
         },
         countLetters: {
-            type: Number,
+            type: [String, Number],
             default: 80
         }
     },

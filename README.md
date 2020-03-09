@@ -15,7 +15,7 @@ import VueSeeMore from 'vue-see-more';
 
 #### Use
 ```html
-<vue-see-more see-more="" see-less="" to-text="" is-style="" count-letters="" /><vue-see-more>
+<vue-see-more see-more="" see-less="" to-text="" is-style="" count-letters="" />
 ```
 
 Additional Parameters: You can customize the starting point (min), the ideal length (ideal), and the max length (max). The defaults for these are 80, 100, and 200 characters respectively. 
