@@ -30,7 +30,7 @@
   "homepage": "https://fsenaweb.me",
   "license": "MIT",
   "devDependencies": {
-    "rollup-plugin-vue": "^5.1.2",
-    "vue-template-compiler": "^2.6.10"
+    "rollup-plugin-vue": "^5.1.6",
+    "vue-template-compiler": "^2.6.11"
   }
 }
