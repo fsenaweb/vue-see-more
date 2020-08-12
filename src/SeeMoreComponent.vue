@@ -1,9 +1,9 @@
 <template>
     <div>
-        <p v-html="formatText" :class="[isStyle ? isStyle : '']"></p>
+        <p v-html="formatText" :class="[textStyle ? textStyle : '']"></p>
         <span v-show="toText.length > countLetters">
-			<a href="#" v-show="!activeSeeMore" v-on:click="handleSeeText($event, true)">{{seeMore}}</a>
-			<a href="#" v-show="activeSeeMore" v-on:click="handleSeeText($event, false)">{{seeLess}}</a>
+			<a href="#" :class="[linkStyle ? linkStyle : '']" v-show="!activeSeeMore" v-on:click="handleSeeText($event, true)">{{seeMore}}</a>
+			<a href="#" :class="[linkStyle ? linkStyle : '']" v-show="activeSeeMore" v-on:click="handleSeeText($event, false)">{{seeLess}}</a>
 		</span>
     </div>
 </template>
@@ -28,7 +28,11 @@ export default {
             type: String,
             required: true
         },
-        isStyle: {
+        textStyle: {
+            type: String,
+            default: ''
+        },
+        linkStyle: {
             type: String,
             default: ''
         },

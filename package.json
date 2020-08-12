@@ -1,7 +1,7 @@
 {
   "name": "vue-see-more",
   "private": false,
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Plugin to assist in displaying long texts",
   "main": "./dist/index.js",
   "scripts": {
