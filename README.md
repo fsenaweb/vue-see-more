@@ -13,12 +13,11 @@ npm install --save vue-see-more
 import VueSeeMore from 'vue-see-more';
 ```
 
-#### Use
+##### Use
 ```html
-<vue-see-more see-more="" see-less="" to-text="" is-style="" count-letters="" />
+<vue-see-more see-more="" see-less="" to-text="" text-style="" link-style="" count-letters="" />
 ```
 
-Additional Parameters: You can customize the starting point (min), the ideal length (ideal), and the max length (max). The defaults for these are 80, 100, and 200 characters respectively. 
 
 | Parameter          | Default Values |
 |--------------------|----------------------------|
@@ -26,10 +25,15 @@ Additional Parameters: You can customize the starting point (min), the ideal len
 | see-less           | 'Retract'                  |
 | to-text            | 'A completed text"         |
 | count-letters      | 80                         |
-| is-style           | A bootstrap class          |
+| text-style         | null                       |
+| link-style         | null                       |
 
+
+_**The parameters text-styles and link-styles are not mandatory and accept custom styles from the project itself, such as from external frameworks, such as bootstrap, bulma, tailwind-css, among others.**_
+
+##### Example
 ```html
-<vue-see-more see-more="See More" see-less="Retract" to-text="A completed text" is-style="a-bootstrap-class" count-letters="80" /><vue-see-more>
+<vue-see-more see-more="See More" see-less="Retract" to-text="A completed text" text-style="a-css-class" link-style="a-css-class" count-letters="80" />
 ```
 
 ## Next steps
