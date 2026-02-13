@@ -1,45 +1,80 @@
 # Vue See More
 [![npm version](https://badge.fury.io/js/vue-see-more.svg)](https://badge.fury.io/js/vue-see-more)
 
-Vue See More is a simple npm component for Vue.js. which hides large text by displaying a minimum size and a maximum text size so as not to damage the layout of your app. The idea is to cut at the best point, not just a specific character, to cut short words. 
+Vue See More is a simple and accessible Vue.js 2 component to handle long texts by truncating them at word boundaries. It provides a clean way to expand and retract content without breaking your layout or cutting words in half.
 
-## How to Use 
+## Features
 
-Vue See More is extraordinarily simple to use with vue. You only need to add some props, as a text, a letters quantity and the the words to exibition in app to expand or retract the text.
+- ✂️ **Smart Truncation**: Automatically cuts text at the nearest space, avoiding broken words.
+- ♿ **Accessible**: Uses semantic buttons instead of anchor tags for better screen reader support.
+- 🔒 **Secure**: Renders plain text by default to prevent XSS (HTML support is optional).
+- 🎨 **Customizable**: Easy to style and configure with props and events.
 
-#### Install and Import
-```
+## Installation
+
+```bash
 npm install --save vue-see-more
+```
+
+## Usage
+
+### Import
+
+```javascript
 import VueSeeMore from 'vue-see-more';
+
+// As a global plugin
+Vue.use(VueSeeMore);
+
+// Or as a local component
+import { VueSeeMore } from 'vue-see-more'; // If exported as named, check your index.js
 ```
 
-##### Use
+### Basic Example
+
 ```html
-<vue-see-more see-more="" see-less="" to-text="" text-style="" link-style="" count-letters="" />
+<vue-see-more 
+  to-text="A very long text that needs to be truncated at some point to keep the layout clean."
+  :count-letters="40"
+/>
 ```
 
+### Full Configuration
 
-| Parameter          | Default Values |
-|--------------------|----------------------------|
-| see-more           | 'See More'                 |
-| see-less           | 'Retract'                  |
-| to-text            | 'A completed text"         |
-| count-letters      | 80                         |
-| text-style         | null                       |
-| link-style         | null                       |
-
-
-_**The parameters text-styles and link-styles are not mandatory and accept custom styles from the project itself, such as from external frameworks, such as bootstrap, bulma, tailwind-css, among others.**_
-
-##### Example
 ```html
-<vue-see-more see-more="See More" see-less="Retract" to-text="A completed text" text-style="a-css-class" link-style="a-css-class" count-letters="80" />
+<vue-see-more 
+  see-more="Read more" 
+  see-less="Show less" 
+  to-text="Your long text here..." 
+  :count-letters="80"
+  ellipsis="..."
+  :allow-html="false"
+  text-style="my-text-class" 
+  link-style="my-button-class"
+  @expand="onExpand"
+  @retract="onRetract"
+/>
 ```
 
-## Next steps
+## Props
 
-### Perform enhancements
-The intention is to improve this package more and more, with the intention of helping others who use this method of hiding large texts to improve the use of some apps.
+| Parameter      | Type             | Default      | Description                                                                 |
+|----------------|------------------|--------------|-----------------------------------------------------------------------------|
+| to-text        | String           | **Required** | The full text to be displayed.                                              |
+| count-letters  | String \| Number | 80           | Maximum number of characters before truncating.                             |
+| see-more       | String           | 'See More'   | Text for the expansion button.                                              |
+| see-less       | String           | 'Retract'    | Text for the retraction button.                                             |
+| ellipsis       | String           | ' [...] '    | Characters shown at the end of truncated text.                              |
+| allow-html     | Boolean          | false        | Whether to render the text as HTML (v-html). Use with caution.              |
+| text-style     | String           | ''           | CSS class applied to the text paragraph.                                    |
+| link-style     | String           | ''           | CSS class applied to the action button.                                     |
+
+## Events
+
+| Event   | Description                                     |
+|---------|-------------------------------------------------|
+| expand  | Emitted when the text is expanded.              |
+| retract | Emitted when the text is retracted (show less). |
 
 ## Contribute
 If you are interested, please submit a pull request from your code and we will help to get developers a simple and quality system to provide the services.
